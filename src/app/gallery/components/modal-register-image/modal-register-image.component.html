@@ -1,0 +1,49 @@
+<h2 mat-dialog-title>Register an image</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="imageForm" (ngSubmit)="saveImage()">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Url Image</mat-label>
+        <input matInput type="url" formControlName="image">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Model</mat-label>
+        <input matInput type="text" formControlName="model">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Home World</mat-label>
+        <input matInput type="text" formControlName="homeworld">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Eye Color</mat-label>
+        <input matInput type="text" formControlName="eyeColor">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Skin Color</mat-label>
+        <input matInput type="text" formControlName="skinColor">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Height</mat-label>
+        <input matInput type="number" formControlName="height">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Species</mat-label>
+        <input matInput type="text" formControlName="species">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Wiki</mat-label>
+        <input matInput type="url" formControlName="wiki">
+      </mat-form-field>
+    </div>
+    <div class="w-full flex justify-center my-4">
+      <button type="submit" mat-stroked-button color="accent">Save image</button>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

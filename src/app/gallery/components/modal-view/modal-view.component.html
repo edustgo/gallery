@@ -1,0 +1,46 @@
+<h2 class="text-3xl">{{ data?.name }}</h2>
+<mat-dialog-content class="mat-typography">
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="p-4">
+      <img
+          [src]="data?.image"
+          [alt]="data?.name"
+          class="inset-0 h-6/6 w-full object-cover object-center rounded opacity-100">
+    </div>
+    <div class="p-4 flex flex-col">
+      <h2 class="text-xl">Details</h2>
+      <ul class="my-0 md:mt-4 md:mb-3 flex flex-col divide-y">
+        <li class="text-lg py-3 md:truncate mx-2 md:mx-0 text-green-300">
+          ID: {{ data?.id }}
+        </li>
+        <li class="text-lg py-3 md:truncate mx-2 md:mx-0">
+          Name: {{ data?.name | titlecase }}
+        </li>
+        <li class="text-lg py-3 md:truncate mx-2 md:mx-0">
+          Model: {{ data?.model | titlecase }}
+        </li>
+        <li class="text-lg py-3 md:truncate mx-2 md:mx-0">
+          Home world: {{ data?.homeworld | titlecase }}
+        </li>
+        <li class="text-lg py-3 md:truncate mx-2 md:mx-0">
+          Eye color: {{ data?.eyeColor | titlecase }}
+        </li>
+        <li class="text-lg py-3 md:truncate mx-2 md:mx-0">
+          Skin color: {{ data?.skinColor | titlecase }}
+        </li>
+        <li class="text-lg py-3 md:truncate mx-2 md:mx-0">
+          Height: {{ data?.height }}
+        </li>
+        <li class="text-lg py-3 md:truncate mx-2 md:mx-0">
+          Species: {{ data?.species | titlecase }}
+        </li>
+        <li class="text-lg py-3 md:truncate mx-2 md:mx-0 text-blue-300">
+          Wiki: <a [href]="data?.wiki" target="_blank">{{ data?.wiki }}</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

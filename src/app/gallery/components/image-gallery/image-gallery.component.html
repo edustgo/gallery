@@ -1,0 +1,36 @@
+<div class="w-full">
+  <div class="w-full sm:w-8/12 md:w-6/12 lg:w-4/12" >
+    <mat-form-field class="w-full" appearance="outline" color="accent">
+      <mat-label class="text-black">Filter by name...</mat-label>
+      <input matInput class="bg-black" (keyup)="applyFilter($event)" placeholder="Enter a name" #input>
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    <ng-container *ngFor="let image of myImages">
+      <div
+        (click)="clickType('view', image)"
+        class="w-full shadow-md rounded-lg pb-3 overflow-auto border-2 border-gray-400 cursor-pointer">
+        <img
+          [src]="image?.url"
+          [alt]="image?.name"
+          class="inset-0 h-6/6 sm:h-72 w-full object-cover sm:object-contain object-center rounded opacity-100 hover:opacity-75 ">
+        <p class="text-center p-2 underline">
+          <mark class="p-1"> {{ image?.name }} </mark>
+        </p>
+      </div>
+    </ng-container>
+  </div>
+  <div *ngIf="this.dataSource && !myImages?.length" class="p-6 flex flex-col items-center my-24">
+    <mat-icon class="icon-size-16 text-5xl text-red-400">error</mat-icon>
+    <p class="text-lg sm:text-3xl my-8"> Oops!, not found data </p>
+  </div>
+  <div class="w-full my-4 flex justify-center" [ngClass]="!myImages?.length ? 'hidden' : ''">
+    <mat-paginator class="w-full md:w-7/12 lg:w-5/12" [pageSizeOptions]="[10, 20, 30, 40, 50]"></mat-paginator>  
+  </div>
+  <div class="fab-button-fixed p-6">
+    <button color="primary" mat-fab aria-label="Add icon button with an add icon" (click)="clickType('add')">
+      <mat-icon class="font-semibold">add</mat-icon>
+    </button>
+  </div>
+</div>

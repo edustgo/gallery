@@ -1,0 +1,13 @@
+.mat-form-field input {
+  border-bottom: 1px solid gray;
+}
+
+.mat-form-field input:focus {
+  border: none;
+}
+
+.fab-button-fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}

@@ -1,0 +1,11 @@
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <span>My Gallery</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+<section class="mt-4 mb-2 p-4">
+  <h1 class="text-center font-bold py-10 text-3xl dark:text-white">My Image Gallery</h1>
+  <app-image-gallery [images]="images" (onClickImage)="view($event)" (addImage)="addImage()"></app-image-gallery>
+</section>
